@@ -10,3 +10,4 @@ Package Manager Dependencies:
 4. Unity UI
 5. DearIMGUI at https://github.com/realgamessoftware/dear-imgui-unity.git#101996d5fced0e6601279e89cb753c474343e8aa
 6. SimpleSpritePacker
+7. DebugDrawExtensions

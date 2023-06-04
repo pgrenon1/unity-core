@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e95eb3701a6e0a04e9f046d3e8de387d, type: 3}
+  m_Name: Index
+  m_EditorClassIdentifier: 
+  onGUIFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  iconDictionary: {fileID: 11400000, guid: 3f198afded161734a857ac40feba6f7a, type: 2}
+  sceneIndex: {fileID: 11400000, guid: 0ed0ce4d3ff9f1a48878600118bfb1fc, type: 2}
+  keywordConfig: {fileID: 11400000, guid: bab93e38afbac79449f3b217df6cd733, type: 2}
+  audioLibrary: {fileID: 11400000, guid: 62e6f6ab981c66742ad43350a7e36706, type: 2}
+  layerMaskManagerData: {fileID: 11400000, guid: 865f00376f20dcd4e92fcc2f4e3d5018, type: 2}
+  inputActionAsset: {fileID: -944628639613478452, guid: e1687ebbe9382994983d12f0152d2c96, type: 3}

@@ -3,22 +3,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 public class PlayerManager : OdinSerializedSingletonBehaviour<PlayerManager>
 {
-    public PlayerController playerControllerPrefab;
+    public Character characterPrefab;
 
     public List<Player> Players { get; private set; } = new List<Player>();
     
-    public delegate void OnPlayerControllerCreated();
-    public event OnPlayerControllerCreated PlayerControllerCreated;
+    public delegate void OnCharacterCreated();
+    public event OnCharacterCreated CharacterCreated;
 
     public delegate void OnPlayerRegistered(Player player);
     public event OnPlayerRegistered PlayerRegistered;
 
     public delegate void OnPlayerUnregistered(Player player);
     public event OnPlayerUnregistered PlayerUnregistered;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        
+        PlayerInputManager.instance.EnableJoining();
+        for (int i = 0; i < SceneManager.sceneCount; i++)
+        {
+            var scene = SceneManager.GetSceneAt(i);
+            int sceneIndex = SceneUtility.GetBuildIndexByScenePath(scene.path);
+            if (sceneIndex == -1)
+                PlayerInputManager.instance.DisableJoining();
+        }
+    }
 
     private void Start()
     {
@@ -35,11 +50,11 @@ public class PlayerManager : OdinSerializedSingletonBehaviour<PlayerManager>
         //player.PlayerInputHandler.SwitchPlayersActionMapToGame();
     }
 
-    public void DestroyPlayerControllers()
+    public void DestroyCharacter()
     {
         foreach (var player in Players)
         {
-            Destroy(player.PlayerController.gameObject);
+            Destroy(player.Character.gameObject);
         }
     }
 
@@ -75,7 +90,7 @@ public class PlayerManager : OdinSerializedSingletonBehaviour<PlayerManager>
     {
         foreach (var player in Players)
         {
-            player.PlayerInputReader.EnableMainGameInputs(true);
+            player.PlayerInputReader.ToggleMainGameInputs(true);
         }
     }
 }

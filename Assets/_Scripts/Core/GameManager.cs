@@ -36,7 +36,7 @@ public class GameManager : OdinSerializedSingletonBehaviour<GameManager>
 
                 foreach (Player player in PlayerManager.Instance.Players)
                 {
-                    player.PlayerInputReader.EnableMainGameInputs(false);
+                    player.PlayerInputReader.ToggleMainGameInputs(false);
                 }
             }
             else
@@ -46,7 +46,7 @@ public class GameManager : OdinSerializedSingletonBehaviour<GameManager>
                 
                 foreach (Player player in PlayerManager.Instance.Players)
                 {
-                    player.PlayerInputReader.EnableMainGameInputs(true);
+                    player.PlayerInputReader.ToggleMainGameInputs(true);
                 }
             }
         }

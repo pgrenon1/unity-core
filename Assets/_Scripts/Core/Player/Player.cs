@@ -16,7 +16,7 @@ public class Player : OdinSerializedBehaviour
     private InputSystemUIInputModule _inputSystemUIInputModuleCache;
     public InputSystemUIInputModule InputSystemUIInputModule => GetCachedComponent(ref _inputSystemUIInputModuleCache);
 
-    public PlayerController PlayerController { get; private set; }
+    public Character Character { get; private set; }
     
     public delegate void OnPlayerControllerSpawned();
     public event OnPlayerControllerSpawned PlayerControllerSpawned;
@@ -38,28 +38,28 @@ public class Player : OdinSerializedBehaviour
         PlayerInput.uiInputModule = InputSystemUIInputModule;
     }
 
-    public void SpawnPlayerController(Vector3 position, Quaternion rotation)
+    public void SpawnCharacter(Vector3 position, Quaternion rotation)
     {
-        var playerController = Instantiate(PlayerManager.Instance.playerControllerPrefab,
+        var playerController = Instantiate(PlayerManager.Instance.characterPrefab,
             position,
             rotation);
 
-        SetPlayerController(playerController);
+        AssignCharacter(playerController);
 
         if (PlayerControllerSpawned != null)
             PlayerControllerSpawned();
     }
 
-    public void SetPlayerController(PlayerController playerController)
+    public void AssignCharacter(Character character)
     {
-        PlayerController = playerController;
-        SceneManager.MoveGameObjectToScene(PlayerController.gameObject, gameObject.scene);
-        PlayerController.Init(this);
+        Character = character;
+        SceneManager.MoveGameObjectToScene(Character.gameObject, gameObject.scene);
+        Character.Init(this);
     }
 
     public void DestroyPlayerController()
     {
         // CameraController.Instance.targetGroupControllerPlayers.RemoveTargetFromGroup(PlayerController.transform);
-        Destroy(PlayerController.gameObject);
+        Destroy(Character.gameObject);
     }
 }

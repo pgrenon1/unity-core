@@ -45,7 +45,7 @@ public class InputReader : BaseBehaviour, PlayerActions.IMenuActions
 
     public virtual void DisableAllInputs()
     {
-        PlayerActions.Menu.Disable();
+        PlayerActions.Disable();
     }
 
     #region Menus Inputs

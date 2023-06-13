@@ -698,6 +698,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
+  _persistent: 1
   debugStateMachine: 0
   debugStateTransitions: 0
 --- !u!114 &5101587763699446205
@@ -721,6 +722,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
+  _persistent: 1
 --- !u!114 &5101587763699446206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -742,6 +744,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
+  _persistent: 1
 --- !u!114 &5101587763699446207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -763,7 +766,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  playerControllerPrefab: {fileID: 8340614184729596153, guid: d7085f1c689e61d42893496fab126a7d, type: 3}
+  _persistent: 1
+  characterPrefab: {fileID: 4966170869765717201, guid: 415ebcc877d8e6b42a0e8ea6f45991ee, type: 3}
 --- !u!114 &5101587763699446144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -829,6 +833,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
+  _persistent: 1
 --- !u!114 &5101587763699446146
 MonoBehaviour:
   m_ObjectHideFlags: 0

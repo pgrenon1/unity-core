@@ -3,38 +3,30 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Processors;
 
-public class PlayerInputReader : InputReader
+public class PlayerInputReader : InputReader, PlayerActions.IMainActions
 {
-    // Shared
     public event UnityAction PauseEvent = delegate { };
     
+    public event UnityAction<float> MovementHorizontalEvent = delegate(float value) {  };
+    public event UnityAction<float> MovementVerticalEvent = delegate(float value) {  };
+    public event UnityAction<Vector2> LookEvent = delegate(Vector2 value) {  };
+    public event UnityAction JumpEvent = delegate { };
+    public event UnityAction JumpCancelledEvent = delegate { };
+
     protected override void SetupPlayerActions()
     {
         base.SetupPlayerActions();
         
-        // PlayerActions.TwinStick.SetCallbacks(this);
-        // PlayerActions.TwinStick.SetCallbacks(this);
-        // PlayerActions.SpaceShip.SetCallbacks(this);
-        // PlayerActions.SpaceShip.SetCallbacks(this);
+        PlayerActions.Main.SetCallbacks(this);
     }
 
-    // public override void DisableAllInputs()
-    // {
-    //     base.DisableAllInputs();
-    //     
-    //     // PlayerActions.TwinStick.Disable();
-    //     // PlayerActions.SpaceShip.Disable();
-    // }
-
-    public void EnableMainGameInputs(bool enable)
+    public void ToggleMainGameInputs(bool enable)
     {
         if (enable)
             PlayerActions.Main.Enable();
         else
             PlayerActions.Main.Disable();
     }
-
-    #region Shared Inputs
     
     public void OnPause(InputAction.CallbackContext context)
     {
@@ -44,5 +36,30 @@ public class PlayerInputReader : InputReader
     
     private bool IsDeviceMouse(InputAction.CallbackContext context) => context.control.device.name == "Mouse";
     
-    #endregion
+    public void OnHorizontal(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+            MovementHorizontalEvent(context.ReadValue<float>());
+    }
+
+    public void OnVertical(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+            MovementVerticalEvent(context.ReadValue<float>());
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+            JumpEvent();
+
+        if (context.phase == InputActionPhase.Canceled)
+            JumpCancelledEvent();
+    }
+
+    public void OnLook(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+            LookEvent(context.ReadValue<Vector2>());
+    }
 }

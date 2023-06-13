@@ -621,8 +621,196 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         {
             ""name"": ""Main"",
             ""id"": ""c0502c9b-a098-4ef2-8b4b-c1da9fdbfa84"",
-            ""actions"": [],
-            ""bindings"": []
+            ""actions"": [
+                {
+                    ""name"": ""Horizontal"",
+                    ""type"": ""Button"",
+                    ""id"": ""de7f6d60-316f-4f11-b03b-1bbcc61ac561"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Vertical"",
+                    ""type"": ""Button"",
+                    ""id"": ""98ae82f9-a943-499b-82d4-8540ca94a9d2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""d3c48e02-8012-4647-8204-5ed3446fcbdd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Look"",
+                    ""type"": ""Value"",
+                    ""id"": ""c0f2c87d-200b-4032-ad61-5d01321438ea"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""LeftPod"",
+                    ""type"": ""Button"",
+                    ""id"": ""610dfba8-b390-47f6-9a77-315f26db64f2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RightPod"",
+                    ""type"": ""Button"",
+                    ""id"": ""07119d57-abfc-4de1-8d07-7c0578b3cb03"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""A/D"",
+                    ""id"": ""d0f89589-b877-450b-acf9-3435b3c5f567"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Horizontal"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""44c37113-88a4-4fb8-9a9f-c1eedba3ad83"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Horizontal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""abfb1c12-e886-44a5-a133-6f29ee3e71f3"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Horizontal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""S/W"",
+                    ""id"": ""80b22e22-6df7-4081-87a1-5f0b6dac628f"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Vertical"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""61ac5f11-94bc-4884-ae30-eb35b6e33f4c"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Vertical"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""ffe7175f-f9f1-4c29-9065-d98ca76ecf94"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Vertical"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f81d3ddf-8605-4523-960d-50a2c03b1abd"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1aa0d306-8a3a-4046-9083-c317fc482c3e"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""294e380e-a857-48df-a60b-ca174f8d3476"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": ""InvertVector2(invertY=false)"",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e4ff6e02-2f48-49dc-9925-4ad353435550"",
+                    ""path"": ""<Joystick>/{Hatswitch}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3e1df245-b813-4acd-9fdf-13e575ca0f6e"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""LeftPod"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8ff68061-bcbd-47c6-a038-dcee24ae8670"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""RightPod"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -674,6 +862,12 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         m_Menu_RightClick = m_Menu.FindAction("RightClick", throwIfNotFound: true);
         // Main
         m_Main = asset.FindActionMap("Main", throwIfNotFound: true);
+        m_Main_Horizontal = m_Main.FindAction("Horizontal", throwIfNotFound: true);
+        m_Main_Vertical = m_Main.FindAction("Vertical", throwIfNotFound: true);
+        m_Main_Jump = m_Main.FindAction("Jump", throwIfNotFound: true);
+        m_Main_Look = m_Main.FindAction("Look", throwIfNotFound: true);
+        m_Main_LeftPod = m_Main.FindAction("LeftPod", throwIfNotFound: true);
+        m_Main_RightPod = m_Main.FindAction("RightPod", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -887,10 +1081,22 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
     // Main
     private readonly InputActionMap m_Main;
     private IMainActions m_MainActionsCallbackInterface;
+    private readonly InputAction m_Main_Horizontal;
+    private readonly InputAction m_Main_Vertical;
+    private readonly InputAction m_Main_Jump;
+    private readonly InputAction m_Main_Look;
+    private readonly InputAction m_Main_LeftPod;
+    private readonly InputAction m_Main_RightPod;
     public struct MainActions
     {
         private @PlayerActions m_Wrapper;
         public MainActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Horizontal => m_Wrapper.m_Main_Horizontal;
+        public InputAction @Vertical => m_Wrapper.m_Main_Vertical;
+        public InputAction @Jump => m_Wrapper.m_Main_Jump;
+        public InputAction @Look => m_Wrapper.m_Main_Look;
+        public InputAction @LeftPod => m_Wrapper.m_Main_LeftPod;
+        public InputAction @RightPod => m_Wrapper.m_Main_RightPod;
         public InputActionMap Get() { return m_Wrapper.m_Main; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -900,10 +1106,46 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_MainActionsCallbackInterface != null)
             {
+                @Horizontal.started -= m_Wrapper.m_MainActionsCallbackInterface.OnHorizontal;
+                @Horizontal.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnHorizontal;
+                @Horizontal.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnHorizontal;
+                @Vertical.started -= m_Wrapper.m_MainActionsCallbackInterface.OnVertical;
+                @Vertical.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnVertical;
+                @Vertical.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnVertical;
+                @Jump.started -= m_Wrapper.m_MainActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnJump;
+                @Look.started -= m_Wrapper.m_MainActionsCallbackInterface.OnLook;
+                @Look.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnLook;
+                @Look.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnLook;
+                @LeftPod.started -= m_Wrapper.m_MainActionsCallbackInterface.OnLeftPod;
+                @LeftPod.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnLeftPod;
+                @LeftPod.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnLeftPod;
+                @RightPod.started -= m_Wrapper.m_MainActionsCallbackInterface.OnRightPod;
+                @RightPod.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnRightPod;
+                @RightPod.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnRightPod;
             }
             m_Wrapper.m_MainActionsCallbackInterface = instance;
             if (instance != null)
             {
+                @Horizontal.started += instance.OnHorizontal;
+                @Horizontal.performed += instance.OnHorizontal;
+                @Horizontal.canceled += instance.OnHorizontal;
+                @Vertical.started += instance.OnVertical;
+                @Vertical.performed += instance.OnVertical;
+                @Vertical.canceled += instance.OnVertical;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
+                @Look.started += instance.OnLook;
+                @Look.performed += instance.OnLook;
+                @Look.canceled += instance.OnLook;
+                @LeftPod.started += instance.OnLeftPod;
+                @LeftPod.performed += instance.OnLeftPod;
+                @LeftPod.canceled += instance.OnLeftPod;
+                @RightPod.started += instance.OnRightPod;
+                @RightPod.performed += instance.OnRightPod;
+                @RightPod.canceled += instance.OnRightPod;
             }
         }
     }
@@ -947,5 +1189,11 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
     }
     public interface IMainActions
     {
+        void OnHorizontal(InputAction.CallbackContext context);
+        void OnVertical(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
+        void OnLook(InputAction.CallbackContext context);
+        void OnLeftPod(InputAction.CallbackContext context);
+        void OnRightPod(InputAction.CallbackContext context);
     }
 }
